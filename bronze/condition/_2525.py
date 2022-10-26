@@ -1,6 +1,4 @@
 
-print(130%60)
-
 h, m = map(int, input().split())
 need_m = int(input())
 
@@ -14,7 +12,6 @@ elif m + need_m > 60:
     m = (m + need_m) % 60
 else:
     m = m + need_m
-
 
 print(h, m)
 
