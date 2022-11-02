@@ -5,7 +5,6 @@ data_list = []
 for i in range(9):
     data_list.extend(map(int, input().splitlines()))
 
-
 print(max(data_list), data_list.index(max(data_list))+1, sep="\n")
 
 # #
