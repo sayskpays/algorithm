@@ -31,6 +31,7 @@ result = 0
 for i in alpha:
     for j in numbers:
         if i in j:
+
             result += numbers.index(j) + 3
 print(result)
 
