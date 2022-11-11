@@ -1,3 +1,4 @@
 
-data = ''
-print(len(data))
+data = "data"
+
+print(data[2:])
