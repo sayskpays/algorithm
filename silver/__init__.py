@@ -1,2 +1,7 @@
+X=int(input())
 
-print(6^2)
+line = 1
+while X > line:
+    X -= line
+    print(X)
+    line += 1
