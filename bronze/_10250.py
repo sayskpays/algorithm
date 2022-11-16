@@ -8,4 +8,5 @@ for _ in range(t):
     floor = h if n%h == 0 else n%h
     room = math.ceil(n/h)
 
+
     print(f'{floor}{room:0>2}')

@@ -1,3 +1,2 @@
-import math
 
-print(72/30)
+print(11-5)
