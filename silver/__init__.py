@@ -1,2 +1,7 @@
 
-print((20%3))
+isExsist = False
+
+if not False:
+    print("FALSE")
+else:
+    print("true")
