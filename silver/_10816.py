@@ -15,4 +15,3 @@ for i in range(len(test)):
     print(cnt_by_range(card,test[i],test[i]),end=' ')
 
 
-
