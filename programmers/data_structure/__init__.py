@@ -9,16 +9,23 @@
 
 
 inputData = [("Java",15000),("Python",25000),("C",18000),("Java",19000)]
-first_data = []
-second_data = []
+# first_data = []
+# second_data = []
+#
+# for i in inputData:
+#     first_data.append(i[0])
+#     second_data.append(i[1])
+#
+# first_data = sorted(set(first_data), key=lambda x: first_data.index(x))
+# if len(inputData) != len(first_data):
+#     del second_data[(len(inputData) != len(first_data))*-1]
+#
+# for _ in range(len(first_data)):
+#     print(f'{first_data[_]} {second_data[_]}', sep='\n')
 
+my_set = set()
 for i in inputData:
-    first_data.append(i[0])
-    second_data.append(i[1])
-
-first_data = sorted(set(first_data), key=lambda x: first_data.index(x))
-if len(inputData) != len(first_data):
-    del second_data[(len(inputData) != len(first_data))*-1]
-
-for _ in range(len(first_data)):
-    print(f'{first_data[_]} {second_data[_]}', sep='\n')
+    key=i[0]
+    if key not in my_set:
+        print(i)
+        my_set.add(key)
