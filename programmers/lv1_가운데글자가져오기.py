@@ -8,4 +8,3 @@ else:
     print(s[mid])
 
 # 다른 사람 풀이법 : return s[(len(str)-1)//2:len(s)//2+1]
-
