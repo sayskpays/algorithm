@@ -2,20 +2,21 @@
 s = input()
 s_list = list(s)
 n = int(input())
+answer = ""
 
 for i in s_list:
     asc_data = ord(i)+n
     if i != " ":
         if asc_data <= 90:
-            print(chr(asc_data),end='')
+            answer += "".join(chr(asc_data))
         elif 91 <= asc_data <= 97:
-            print(chr(65 + (asc_data - 91)),end='')
+            answer += "".join(chr(65 + (asc_data - 91)))
         elif asc_data < 123:
-            print(chr(asc_data),end='')
+            answer += "".join(chr(asc_data))
         else:
-            print(chr(97+(asc_data-123)),end='')
+            answer += "".join(chr(97+(asc_data-123)))
     else:
-        print(" ",end='')
+        answer += "".join(" ")
 
-
+print(answer)
 
