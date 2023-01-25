@@ -1,57 +1,55 @@
-# Bronze 1 9093 단어 뒤집기
-
 # import sys
 #
 # n = int(sys.stdin.readline().strip())
+# stack = []
+# answer = []
+# flag = 0
+# cur = 1
 #
-# for _ in range(n):
-#     data = sys.stdin.readline().strip()
-#     list_data = data[::-1].split()
-#     list_data.reverse()
-#     for i in list_data:
-#         print(i, end=' ')
-#     print()
-
-# 9012 번 실버 4 괄호
-import sys
-
-t = int(sys.stdin.readline().strip())
-
-# 해설
-
-for _ in range(t):
-    stack = []
-    a = sys.stdin.readline().strip()
-    for i in a:
-        if i == "(":
-            stack.append(i)
-        elif i == ")":
-            if stack:
-                stack.pop()
-            else:
-                print("NO")
-                break
-    else: # break 문으로 끊이지 않고 for문이 실행 되었을 때
-        if not stack:
-            print("YES")
-        else:
-            print("NO")
-
-# 내가 푼 코드
-
-# for _ in range(t):
-#     low_data = sys.stdin.readline().strip()
-#     low_data = low_data.replace("()", "")
+# for i in range(n):
+#     num = int(sys.stdin.readline().strip())
+#     while cur <= num:
+#         stack.append(cur)
+#         answer.append("+")
+#         cur += 1
 #
-#     if low_data.count("(") == low_data.count(")") and low_data.endswith(")"):
-#         print("YES")
+#     if stack[-1] == num:
+#         stack.pop()
+#         answer.append("-")
 #     else:
 #         print("NO")
+#         flag = 1
+#         break
+#
+# if flag == 0:
+#     for i in answer:
+#         print(i)
+import sys
 
+n = sys.stdin.readline().strip()
+m = int(sys.stdin.readline().strip())
+stack = list(n)
+pointer = len(n) + 1
 
+for _ in range(m):
+    ord = sys.stdin.readline().strip()
 
+    if ord == "L":
+        if pointer == 0:
+            pass
+        else:
+            pointer -= 1
+    elif ord == "D":
+        if pointer > len(n) + 1:
+            pass
+        else:
+            pointer += 1
+    elif ord == "B":
+        if pointer <= 0:
+            pass
+        else:
+            stack.pop(pointer-1)
+    else:
+        stack.insert(pointer, ord.split(" ")[1])
 
-
-
-
-
+print("".join(stack))
