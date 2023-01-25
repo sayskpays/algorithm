@@ -1,46 +1,50 @@
-from itertools import combinations
+# 10828 스택
 
-
-# def is_prime_number(num):
-#     if num == 0 or num == 1:
-#         return False
+# import sys
+#
+# n = int(sys.stdin.readline())
+# stack = []
+#
+# for _ in range(n):
+#     order = sys.stdin.readline().split()
+#
+#     if order[0] in "push":
+#         stack.append(order[1])
+#     elif order[0] in "top":
+#         try:
+#             print(stack[-1])
+#         except:
+#             print(-1)
+#     elif order[0] in "size":
+#         print(len(stack))
+#     elif order[0] in "empty":
+#         if len(stack) == 0:
+#             print(1)
+#         else:
+#             print(0)
+#     elif order[0] in "pop":
+#         try:
+#             data = stack.pop(-1)
+#             print(data)
+#         except:
+#             print(-1)
 #     else:
-#         for i in range(2, (num // 2) + 1):
-#             if num % i == 0:
-#                 return False
+#         break
+
+
+# import sys
 #
-#         return True
+# n = int(sys.stdin.readline().strip())
 #
-#
-# def solution(nums):
-#     answer = 0
-#     cmb = list(combinations(nums, 3))
-#     for arr in cmb:
-#         if is_prime_number(sum(arr)):
-#             answer += 1
-#     return answer
-#
-#
-# print(solution([1, 2, 7, 6, 4]))
-
-def is_last_check(num, budget):
-    if num % budget == 0:
-        return False
-    else:
-        return True
+# for _ in range(n):
+#     data = sys.stdin.readline().strip()
+#     list_data = data[::-1].split()
+#     list_data.reverse()
+#     for i in list_data:
+#         print(i, end=' ')
+#     print()
 
 
-def solution(d, budget):
-    answer = 1
-
-    while True:
-        cmb = list(combinations(d, answer))
-        for i in cmb:
-            if is_last_check(sum(i), budget):
-                continue
-            else:
-                answer += 1
-    return answer
 
 
-print(solution([1, 3, 5, 2, 4], 9))
+
