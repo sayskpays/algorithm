@@ -1,17 +1,3 @@
-# Bronze 1 9093 단어 뒤집기
-
-# import sys
-#
-# n = int(sys.stdin.readline().strip())
-#
-# for _ in range(n):
-#     data = sys.stdin.readline().strip()
-#     list_data = data[::-1].split()
-#     list_data.reverse()
-#     for i in list_data:
-#         print(i, end=' ')
-#     print()
-
 # 9012 번 실버 4 괄호
 import sys
 
@@ -47,11 +33,3 @@ for _ in range(t):
 #         print("YES")
 #     else:
 #         print("NO")
-
-
-
-
-
-
-
-
