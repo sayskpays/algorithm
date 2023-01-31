@@ -1,39 +1,25 @@
 import sys
-from collections import deque
 
-deque = deque()
+word = list(sys.stdin.readline().rstrip())
 
-for _ in range(int(sys.stdin.readline())):
-    command = list(sys.stdin.readline().split())
+i = 0
+start = 0
 
-    if command[0] == 'push_front':
-        deque.append(command[1])
-    elif command[0] == 'push_back':
-        deque.appendleft(command[1])
-    elif command[0] == 'pop_front':
-        if deque:
-            print(deque.pop())
-        else:
-            print(-1)
-    elif command[0] == 'pop_back':
-        if deque:
-            print(deque.popleft())
-        else:
-            print(-1)
-    elif command[0] == 'size':
-        print(len(deque))
-    elif command[0] == 'empty':
-        if deque:
-            print(0)
-        else:
-            print(1)
-    elif command[0] == 'front':
-        if deque:
-            print(deque[-1])
-        else:
-            print(-1)
+while i < len(word):
+    if word[i] == '<': # 열린 괄호를 만나면
+        i += 1
+        while word[i] != '>': # 닫힌 괄호를 만날 때 까지
+            i += 1
+        i += 1 # 닫힌 괄호를 만난 후 인덱스를 하나 증가시킨다.
+
+    elif word[i].isalnum(): # 숫자나 알파벳을 만나면
+        start = i
+        while i < len(word) and word[i].isalnum():
+            i += 1
+        tmp = word[start:i]
+        tmp.reverse()
+        word[start:i] = tmp
     else:
-        if deque:
-            print(deque[0])
-        else:
-            print(-1)
+        i += 1
+
+print("".join(word))
