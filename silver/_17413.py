@@ -19,5 +19,8 @@ while i < len(word):
         tmp = word[start:i]
         tmp.reverse()
         word[start:i] = tmp
+    else:
+        i += 1 # 괄호도 아니고 알파벳, 숫자도 아닌 것은 공백이므로
+                # 그냥 인덱스 증가 시킨다.
 
 print("".join(word))
