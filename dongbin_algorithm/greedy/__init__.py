@@ -1,1 +1,4 @@
-print(27%3)
+
+
+data = [1,2,3]
+print(data[:2])
