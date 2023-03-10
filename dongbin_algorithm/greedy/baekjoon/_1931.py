@@ -1,10 +1,11 @@
-n = int(input())
+import sys
+
+n = int(sys.stdin.readline().rstrip())
 time = []
 
 for _ in range(n):
-    start, end = map(int, input().split())
+    start, end = map(int, sys.stdin.readline().rstrip().split())
     time += [[start, end]]
-
 
 time = sorted(time, key=lambda a: a[0])
 time = sorted(time, key=lambda a: a[1])
@@ -18,5 +19,3 @@ for i, j in time:
         last = j
 
 print(count)
-
-
