@@ -1,16 +1,19 @@
-n = input()
-arr = []
-start = n[0]
-for i in n:
-    if start == i:
-        continue
-    else:
-        start = i
-        arr.append(1)
+# n = input()
+# arr = []
+# start = n[0]
+# for i in n:
+#     if start == i:
+#         continue
+#     else:
+#         start = i
+#         arr.append(1)
+#
+# print((arr.count(1)+1) // 2)
 
-if len(arr) == 1:
-    print(1)
-elif arr is []:
-    print(0)
-else:
-    print(len(arr) // 2)
+s = input()
+
+cnt = 0
+for i in range(len(s) -1):
+    if s[i] != s[i+1]:
+        cnt += 1
+print((cnt+1) // 2)
